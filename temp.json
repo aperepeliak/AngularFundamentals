@@ -1,0 +1,40 @@
+{
+    "method":"POST",
+    "transformRequest":[null],
+    "transformResponse":[null],
+    "url":"/reports/radiant/api/Entities",
+    "data":
+    {
+        "settings":
+        {
+            "type":"pb-investors",
+            "preload":false,
+            "displayProperty":"name",
+            "name":"dsPbInvestors"
+        },
+        "attributes":
+        [
+            "compositeKey","crmId","prId","city","country","type","includeInReport","activityIds",
+            "mailIds","investorContactId","side","name","companyName","equityAssets",
+            "fixedIncomeAssets","contacts","isPrimary","firstName","lastName","internalRecipient","investor"
+        ],
+        "filters":
+        [
+            {
+                "type":"byValue",
+                "values":
+                [
+                    "{\"entities\":[{\"compositeKey\":\"698511I10180707\",\"includeInReport\":true,\"investorContactId\":0,\"id\":\"64e1dce2-ec50-4faf-926d-14d1269d289c\"}],\"settings\":{},\"visualStateSettings\":{\"linked\":\"true\",\"profileSearchType\":\"Contact\"}}"
+                ],
+                "sortGroups":[],
+                "properties":["widgetDescriptrInfo"]
+            }
+        ]
+    },
+    "timeout":{},
+    "headers":
+    {
+        "Accept":"application/json, text/plain, */*",
+        "Content-Type":"application/json;charset=utf-8"
+    }
+}
