@@ -1,3 +1,5 @@
+import { EventsListResolver } from './events/events-list-resolver.service';
+import { EventRouterActivator } from './events/event-details/event-route-activator.service';
 import { Error404Component } from './errors/404.component';
 import { CreateEventComponent } from './events/create-event.component';
 import { appRoutes } from './routes';
@@ -26,7 +28,13 @@ import { RouterModule } from "@angular/router";
         Error404Component
     ],
     providers: [
-        EventService
+        EventService,
+        EventRouterActivator,
+        EventsListResolver,
+        {
+            provide: 'canDeactivateCreateEvent',
+            useValue: checkDirtyState
+        }
     ],
     bootstrap: [
         EventsAppComponent
@@ -34,4 +42,12 @@ import { RouterModule } from "@angular/router";
 })
 export class AppModule {
 
+}
+
+function checkDirtyState(component: CreateEventComponent) {
+    if (component.isDirty) {
+        return window.confirm('Are you sure?');
+    } else {
+        return true;
+    }
 }
