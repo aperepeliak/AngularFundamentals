@@ -11,5 +11,4 @@ export class EventsListResolver implements Resolve<any> {
     resolve() {
         return this.eventService.getEvents().map(events => events);
     }
-
 }
