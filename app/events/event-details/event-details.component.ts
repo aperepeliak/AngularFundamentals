@@ -15,6 +15,9 @@ import { ActivatedRoute } from "@angular/router";
 export class EventDetailsComponent implements OnInit {
     addMode: boolean;
     event: IEvent;
+    filterBy: string = 'all';
+    sortBy: string = 'votes';
+
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
 
@@ -33,7 +36,7 @@ export class EventDetailsComponent implements OnInit {
         this.eventService.updateEvent(this.event);
         this.addMode = false;
     }
-
+    
     cancelAddSession() {
         this.addMode = false;
     }
