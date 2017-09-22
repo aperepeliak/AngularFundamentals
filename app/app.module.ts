@@ -1,7 +1,8 @@
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './user/auth.service';
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from "@angular/router";
 
 import {
@@ -13,7 +14,8 @@ import {
     EventRouterActivator,
     EventsListResolver,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    DurationPipe
 } from './events/index';
 
 import { Error404Component } from './errors/404.component';
@@ -37,7 +39,9 @@ import { EventsAppComponent } from './events-app.component';
         CreateEventComponent,
         Error404Component,
         CreateSessionComponent,
-        SessionListComponent
+        SessionListComponent,
+        CollapsibleWellComponent,
+        DurationPipe
     ],
     providers: [
         EventService,
